@@ -1,0 +1,14 @@
+import csv
+
+with open("cartelera.csv", "w", newline="", encoding="utf-8") as file:
+    writer = csv.writer(file)
+    writer.writerow(["Película", "Formatos"])
+
+    for movie in movies:
+        title = movie.find_element(By.TAG_NAME, "h2").text.strip()
+        formats = movie.find_elements(By.CLASS_NAME, "format")
+        format_list = [fmt.text.strip() for fmt in formats]
+        writer.writerow([title, ", ".join(format_list)])
+
+print("✅ Datos guardados en cartelera.csv")
+driver.quit()

@@ -5,5 +5,56 @@ Este proyecto es para los cinefilos y mi base de lo que queria lograr era scrape
 # realizando el scraper
 al intentar scrapear la pagina de cinesa no me dejo y daba error entonces opte por irme a otra pagina la de kinetpolis y esta me bloqueo incluso entonces busque paginas mas sencillas a ver si quizas lo lograba hasta que llegue a la de filmaffinity que me salvo la vida 
 
-# instalaciones 
-para eso utilize selenium 
+# 🎬 Scraper de Cartelera de Películas con Selenium
+
+Este script usa `Selenium` para extraer los **títulos** y **fechas de estreno** de las películas en la cartelera de [FilmAffinity](https://www.filmaffinity.com/es/cat_new_th_es.html) y guardarlos en un archivo CSV.
+
+---
+
+## 🚀 Instalación y Requisitos
+
+### 📌 **1. Instalar Python**
+Asegúrate de tener Python 3 instalado en tu sistema.  
+Para verificarlo, ejecuta en la terminal o línea de comandos:
+
+sh
+python --version
+´´´´
+##instalar dependencias
+pip install selenium webdriver-manager pandas
+
+ Descripción de las librerías usadas en el script:
+
+selenium → Permite automatizar la navegación en sitios web.
+webdriver-manager → Administra la descarga y actualización del controlador de Chrome.
+pandas → Permite manejar archivos CSV de forma sencilla
+
+📜 Funcionamiento del Script
+1️⃣ Inicialización del navegador con Selenium
+
+Se configura Chrome en modo headless (sin abrir una ventana visual).
+Se deshabilita la GPU y se establece un tamaño de ventana de 1920x1080.
+2️⃣ Carga de la página de FilmAffinity
+
+Se accede a la URL de la cartelera de estrenos:
+👉 https://www.filmaffinity.com/es/cat_new_th_es.html
+3️⃣ Extracción de datos
+
+Se buscan los elementos que contienen los títulos y fechas de estreno de las películas.
+Se usa la función find_elements() con By.CLASS_NAME para ubicar los datos dentro del HTML.
+4️⃣ Almacenamiento en un archivo CSV
+
+Se crea (o sobrescribe) el archivo cartelera.csv.
+Se escriben los datos extraídos en formato Película, Fecha de Estreno.
+5️⃣ Cierre del navegador
+
+Una vez extraída la información, el script cierra el navegador para liberar recursos.
+6️⃣ Lectura del CSV y visualización de los datos
+
+Se usa pandas para leer el archivo cartelera.csv y mostrar su contenido en la terminal.
+▶️ Ejecución del Script
+Para ejecutar el script, simplemente abre la terminal en la carpeta del proyecto y escribe:
+
+sh
+Copiar código
+python scraper.py

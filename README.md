@@ -55,6 +55,30 @@ Se usa pandas para leer el archivo cartelera.csv y mostrar su contenido en la te
 ▶️ Ejecución del Script
 Para ejecutar el script, simplemente abre la terminal en la carpeta del proyecto y escribe:
 
+## Agregando base de datos con SQLite
+import sqlite 
+ = sqlite3.connect('peliculas.db')
+cur = con.cursor()
+
+siguiendo esos pasos se agrega luego esta parte del codigo 
+
+cur.execute("create table if not exists cartelera (title UNIQUE, fecha_estreno)")
+
+
+cur.executemany("INSERT OR IGNORE INTO cartelera VALUES(?, ?)", data)
+con.commit()
+
+## Test Unitarios 
+tengo test unitarios en una de las ramas la cual llame sin complicarme mucho solo "test" pienso agregar un test  mi rama principal  
+
+## RAMAS 
+pueden ver y los invitos a ver mis otras ramas ya que es un poco mas avanzado el codigo pero decidi no incluirla a la principal pero las ramas estan y existen son nmain(Que es la que estamos) dev,super/code, data/base ,test
+
+## Trello
+aca les dejo tambien la conexion de mi trello [https://trello.com/b/xq6pXNWV/web-scraping]
+
+
+
 sh
 Copiar código
 python scraper.py

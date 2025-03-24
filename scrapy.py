@@ -56,5 +56,5 @@ with open("cartelera.csv", "w", newline="", encoding="utf-8") as file:
 
 driver.quit()
 print("✅ Datos guardados en cartelera.csv")
-idiota = "yo"
+
 

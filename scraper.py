@@ -57,8 +57,6 @@ con.commit()
 print("✅ Datos guardados en la base de datos")
 
 driver.quit()
-
-
 print("✅ Datos guardados en cartelera.csv")
 
 

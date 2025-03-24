@@ -79,6 +79,5 @@ aca les dejo tambien la conexion de mi trello [https://trello.com/b/xq6pXNWV/web
 
 
 
-sh
-Copiar código
+## Correr el programa
 python scraper.py
